@@ -10,6 +10,6 @@ jobs:
               run: echo "Hello World"
             - name: multi line command
               run: |
-                  echo "This is line 1" &&
-                  echo "This is line 2" &&
+                  echo "This is line 1"
+                  echo "This is line 2"
                   echo "This is line 3"
