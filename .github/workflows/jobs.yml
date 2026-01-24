@@ -1,0 +1,23 @@
+name: Dependand and parallel jobs
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: First step
+              run: echo "This is the first job"
+    parallel-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: parallel job
+              run: echo cat /etc/os-release
+    dependent-job:
+        needs: first-job
+        runs-on: ubuntu-latest
+        steps:
+            - name: dependent job
+              run: echo "This job runs after the first job"
